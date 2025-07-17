@@ -1,0 +1,237 @@
+/* style.css */
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.8s ease both;
+}
+
+/* Button Hover Effects */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0.95;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #fca903;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: #fca903;
+  color: white;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.talk-btn {
+  background-color: #fca903;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+body {
+  background-image: url("lightblend.jpg");
+  background-attachment: fixed;
+  backdrop-filter: blur(50px);
+  background-size: 100% 100%;
+}
+/* Main Grid Layout */
+.main-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.profile {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-img {
+  width: 250px;
+  height: 300px;
+  border-radius: 10%;
+  object-fit: cover;
+  object-position: 30% 20%;
+  border: 4px solid #fca903;
+}
+
+.profile h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.call-btn,
+.email-btn {
+  background: #fca903;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.socials a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fca903;
+}
+
+.actions button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: #fca903;
+  color: white;
+}
+
+.socials a {
+  margin-right: 0.5rem;
+  text-decoration: none;
+  color: #fca903;
+}
+
+.skills-grid,
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skills-grid span,
+.services-grid span {
+  background: #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.project-item {
+  margin-top: 1rem;
+}
+
+.project-item img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+body.dark .card {
+  background: #1f2937;
+}
+
+body.dark .navbar {
+  background-color: #1f2937;
+}
+
+body.dark .nav-links a {
+  color: #e5e7eb;
+}
+
+body.dark .talk-btn {
+  background-color: #fca903;
+}
+
+body.dark .skills-grid span,
+body.dark .services-grid span {
+  background: #374151;
+  color: #f9fafb;
+}

@@ -1,0 +1,322 @@
+/* style.css (about page) */
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card,
+.stats div,
+.brands img,
+.testimonial,
+.award-item {
+  animation: fadeInUp 0.8s ease both;
+}
+
+/* Button Hover Effects */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0.95;
+}
+
+/* Navbar Styling (matching index) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+.logo span {
+  color: #fca903;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: #fca903;
+  color: white;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.talk-btn {
+  background: #fca903;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+body {
+  background-image: url("spotsred.jpg");
+  background-attachment: fixed;
+  backdrop-filter: blur(50px);
+  background-size: 100% 100%;
+}
+/* Profile Card Styling (matching index) */
+.profile {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-img {
+  width: 250px;
+  height: 300px;
+  border-radius: 10%;
+  object-fit: cover;
+  object-position: 30% 20%;
+  border: 4px solid #fca903;
+}
+
+.profile h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile p {
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.call-btn,
+.email-btn {
+  background: #fca903;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.socials a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fca903;
+}
+
+.about-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 2rem;
+}
+
+.about-main h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-main .highlight {
+  color: #fca903;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stats div {
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.stats strong {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.brands img {
+  height: 40px;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.testimonial {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 6px solid #fca903;
+  font-size: 0.95rem;
+}
+
+.awards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.award-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.award-item img {
+  height: 40px;
+}
+
+.award-item .tag {
+  background: #d1d5db;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.award-item .tag.gold {
+  background: gold;
+  color: #000;
+}
+
+.award-item button {
+  background: #fca903;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .brands {
+    justify-content: center;
+  }
+
+  .award-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Dark Mode */
+body.dark {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+body.dark .card {
+  background: #1f2937;
+}
+
+body.dark .navbar {
+  background-color: #1f2937;
+}
+
+body.dark .nav-links a {
+  color: #e5e7eb;
+}
+
+body.dark .talk-btn {
+  background-color: #fca903;
+}
+
+body.dark .testimonial,
+body.dark .award-item,
+body.dark .stats div {
+  background-color: #636362;
+}
+body.dark .stats,
+body.dark .testimonials,
+body.dark .brands {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}

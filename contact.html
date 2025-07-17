@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Rohit Kumar Mahto</title>
+    <link rel="stylesheet" href="aboutStyling.css" />
+    <style>
+      .contact-form-wrapper {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border-top: 6px solid #1f2937;
+      }
+
+      .contact-form-wrapper input,
+      .contact-form-wrapper #editor {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+      }
+
+      .toolbar button {
+        background: #f3f4f6;
+        border: none;
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.4rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .toolbar button:hover {
+        background: #e2e8f0;
+      }
+
+      #editor {
+        min-height: 160px;
+        resize: vertical;
+        overflow: auto;
+      }
+
+      #editor[contenteditable="true"]:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+      }
+
+      .contact-form-wrapper button[type="submit"] {
+        position: relative;
+        top: 5px;
+        left: 500px;
+        width: fit-content;
+        align-self: flex-end;
+        background: #3b82f6;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .contact-form-wrapper button[type="submit"]:hover {
+        background: #2563eb;
+      }
+
+      @media (max-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-form-wrapper {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Rohit's <span>Folio</span></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="darkModeToggle">🌙</button>
+        <button class="talk-btn">Let's Talk ⌄</button>
+      </div>
+    </header>
+
+    <main class="about-grid">
+      <!-- Profile Card -->
+      <section class="card profile">
+        <img src="profile.jpeg" alt="Profile Photo" class="profile-img" />
+        <h2>Rohit Kumar Mahto 👋</h2>
+        <p>A Passionate Full Stack Developer 🖥️.</p>
+        <div class="actions">
+          <button class="call-btn">📞 Book A Call</button>
+          <button class="email-btn">📧 Copy Email</button>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/rohitxtechie">
+            <img
+              src="github-logo.png"
+              alt="GitHub"
+              style="width: 20px; height: 20px"
+            />
+          </a>
+          <a href="https://linkedin.com/in/rohitxtechie">
+            <img
+              src="linkedin.png"
+              alt="LinkedIn"
+              style="width: 20px; height: 20px"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Redesigned Contact Card with Rich Text -->
+      <section class="card contact-form-wrapper">
+        <h3 style="margin: 0">Email to Rohit</h3>
+        <form
+          action="https://formspree.io/f/mjkrnjap"
+          method="POST"
+          onsubmit="return showSuccessMessage(event)"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
+
+          <!-- Rich Text Editor -->
+          <div class="toolbar">
+            <button type="button" onclick="execCmd('bold')"><b>B</b></button>
+            <button type="button" onclick="execCmd('italic')"><i>I</i></button>
+            <button type="button" onclick="execCmd('underline')">
+              <u>U</u>
+            </button>
+            <button type="button" onclick="execCmd('insertUnorderedList')">
+              • List
+            </button>
+            <button type="button" onclick="execCmd('createLink')">
+              🔗 Link
+            </button>
+          </div>
+
+          <div id="editor" contenteditable="true"></div>
+
+          <textarea
+            id="hiddenMessage"
+            name="message"
+            style="display: none"
+          ></textarea>
+          <input type="text" name="_gotcha" style="display: none" />
+          <button type="submit">Send Email</button>
+        </form>
+        <div
+          id="successMessage"
+          style="
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: #d1fae5;
+            color: #065f46;
+            font-weight: 500;
+          "
+        >
+          Thank you for reaching out! Your message has been received. I’ll get
+          back to you shortly.
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function showSuccessMessage(event) {
+        event.preventDefault();
+        const form = event.target;
+        const editorContent = document.getElementById("editor").innerHTML;
+        document.getElementById("hiddenMessage").value = editorContent;
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        })
+          .then((response) => {
+            if (response.ok) {
+              document.getElementById("successMessage").style.display = "block";
+              form.reset();
+              document.getElementById("editor").innerHTML = "";
+            } else {
+              alert("Oops! Something went wrong. Please try again later.");
+            }
+          })
+          .catch(() => alert("Network error. Please try again later."));
+        return false;
+      }
+
+      function execCmd(command) {
+        if (command === "createLink") {
+          const url = prompt("Enter the URL:");
+          if (url) document.execCommand(command, false, url);
+        } else {
+          document.execCommand(command, false, null);
+        }
+      }
+    </script>
+    <script src="backend.js"></script>
+  </body>
+</html>

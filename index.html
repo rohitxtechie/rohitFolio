@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="logo">Rohit's <span>Folio</span></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Dark Mode Toggle + Let's Talk -->
+      <div class="header-actions">
+        <button id="darkModeToggle">🌙</button>
+        <button class="talk-btn">Let's Talk ⌄</button>
+      </div>
+    </header>
+
+    <!-- Main Section Grid -->
+    <main class="main-grid">
+      <!-- Profile Card -->
+      <section class="card profile">
+        <img src="profile.jpeg" alt="Profile Photo" class="profile-img" />
+        <h2>Rohit Kumar Mahto 👋</h2>
+        <p>A Passionate Full Stack Developer 🖥️.</p>
+        <div class="actions">
+          <button class="call-btn">📞 Book A Call</button>
+          <button class="email-btn">📧 Copy Email</button>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/rohitxtechie"
+            ><img
+              src="github-logo.png"
+              alt="LinkedIn"
+              class="github-img"
+              style="width: 20px; height: 20px"
+          /></a>
+          <a href="https://linkedin.com/in/rohitxtechie"
+            ><img
+              src="linkedin.png"
+              alt="LinkedIn"
+              class="linkedin-image"
+              style="width: 20px; height: 20px"
+          /></a>
+        </div>
+      </section>
+
+      <!-- Work Experience -->
+      <section class="card work">
+        <h3>Education</h3>
+        <ul>
+          <li>
+            <strong>Amity University Jharkhand</strong>
+            <p>B.Tech(CSE) <br />CGPA:(8.04/10)</p>
+          </li>
+          <li>
+            <strong>Surendranath Centenary School</strong>
+            <p>XII(CBSE) <br />Grade:(83.2%)</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- My Expert Area -->
+      <section class="card skills">
+        <h3>My Expert Area</h3>
+        <div class="skills-grid">
+          <span>C/C++</span>
+          <span>Java</span>
+          <span>Html</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>SQL</span>
+        </div>
+      </section>
+
+      <!-- Recent Projects -->
+      <section class="card projects">
+        <h3>Recent Projects <a href="#">All Projects →</a></h3>
+        <div class="project-item">
+          <img src="project1.png" alt="Project 1" />
+          <p>Product Design</p>
+        </div>
+        <div class="project-item">
+          <img src="project2.png" alt="Project 2" />
+          <p>Product Design</p>
+        </div>
+      </section>
+
+      <!-- Services Offered -->
+      <section class="card services">
+        <h3>Services I Offered <a href="#">See All Services →</a></h3>
+        <div class="services-grid">
+          <span>UI UX Design</span>
+          <span>Mobile App</span>
+          <span>Product Design</span>
+          <span>Branding</span>
+        </div>
+      </section>
+
+      <!-- Work Together Card -->
+      <section class="card contact">
+        <h3>Available For Hire</h3>
+        <p>Let's 👋 <br />Work Together</p>
+        <a href="#">Let's Talk →</a>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="backend.js"></script>
+  </body>
+</html>
