@@ -26,6 +26,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Hamburger menu for mobile nav
+  const hamburger = document.getElementById("hamburgerMenu");
+  const navLinks = document.getElementById("navLinks");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+    hamburger.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        navLinks.classList.toggle("open");
+      }
+    });
+  }
+
   // Animate elements on scroll (basic version)
   const animatedItems = document.querySelectorAll(
     ".card, .stats div, .brands img, .testimonial, .award-item"
